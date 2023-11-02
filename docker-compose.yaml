@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  database: 
+    image: mysql:8.2.0
+    ports:
+      - 3306
+    env_file:
+      - .env.docker.dev

@@ -1,7 +1,9 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const cors = require("cors");
-const indexRouter = require("./routes/index.router")
+const path = require("path");
+
+const indexRouter = require("./routes/index.router");
 
 dotenv.config();
 
@@ -11,6 +13,15 @@ const PORT = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
+
+app.use(
+  "/css",
+  express.static(path.join(__dirname, "node_modules/bootstrap/dist/css"))
+);
+app.use(
+  "/js",
+  express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
+);
 
 app.use(cors());
 

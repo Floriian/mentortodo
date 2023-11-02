@@ -1,9 +1,10 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  database: 
-    image: mysql:8.2.0
-    ports:
-      - 3306
+  database:
+    image: postgres:15.4-alpine
+    container_name: mentordatabase
     env_file:
       - .env.docker.dev
+    ports:
+      - 5432:5432

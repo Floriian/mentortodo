@@ -32,8 +32,12 @@
             <p><%= todo.description %></p>
           </div>
           <div class="card-footer d-flex justify-content-between w-100">
-            <button class="btn btn-danger">Delete</button>
-            <button class="btn btn-success">Mark as <%= todo.title === true ? 'uncompleted' : 'completed' %></button>
+            <form method="DELETE" action="/<%= todo.id %>">
+              <button class="btn btn-danger">Delete</button>
+            </form>
+            <form method="PATCH" action="/<%= todo.id%>">
+              <button class="btn btn-success">Mark as <%= todo.title === true ? 'uncompleted' : 'completed' %></button>
+            </form>
           </div>
         </div>
       <% } %>

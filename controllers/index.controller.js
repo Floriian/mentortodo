@@ -1,8 +1,11 @@
-const TodoService = require("../services/todo.service");
-
+const db = require("../models/index");
+const Todos = db.todos;
 class IndexController {
   static async get(req, res) {
-    return res.render("index");
+    const todos = await Todos.findAll({ raw: true });
+    return res.render("index", {
+      todos,
+    });
   }
 }
 

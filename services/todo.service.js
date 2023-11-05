@@ -1,4 +1,5 @@
-const Todo = require("../models/todo.model");
+const db = require("../models/index");
+const Todos = db.todos;
 
 const create = async (dto) => {
   try {
@@ -15,9 +16,10 @@ const create = async (dto) => {
 };
 
 const findAll = async () => {
-  return await Todo.findAll({ raw: true });
+  return await Todos.findAll();
 };
 
 module.exports = {
   create,
+  findAll,
 };

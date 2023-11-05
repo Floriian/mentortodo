@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
   </head>
   <body>
-    <button class="btn btn-danger">Danger</button>
+    <div class="d-flex w-100 flex-column align-items-center">
+        <h4>Simple TODO APP</h4>
+        <form class="form-section border p-2" method="POST" action="/">
+            <div class="row mb-3 form-group">
+                <label for="title" class="col-form-label form-label col-3 text-end">Title</label>
+                <div class="col-9">
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="row mb-3 form-group m-2">
+                <label for="title" class="form-label">Description</label>
+                <textarea type="text" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Create</button>
+        </form>
+    </div>
+    </div>
   </body>
 </html>

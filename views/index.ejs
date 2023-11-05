@@ -28,12 +28,17 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title"> <%= todo.title %> </h5>
-
+            <p>Completed: <%= todo.completed %></pó>
             <p><%= todo.description %></p>
-
+          </div>
+          <div class="card-footer d-flex justify-content-between w-100">
+            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-success">Mark as <%= todo.title === true ? 'uncompleted' : 'completed' %></button>
           </div>
         </div>
       <% } %>
+
+
     </div>
     </div>
   </body>
